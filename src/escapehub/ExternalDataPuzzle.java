@@ -17,8 +17,7 @@ public class ExternalDataPuzzle extends TextPuzzle {
     }
     @Override
     public String typeName() {
-        return "ψάξε στο " + (source.equals("wikidata") ? "Wikidata" : "Open Library") + " (με την
-        Αναζήτηση)";
+        return "ψάξε στο " + (source.equals("wikidata") ? "Wikidata" : "Open Library") + " (με την Αναζήτηση)";
     }
     public String getSource() {
         return source;

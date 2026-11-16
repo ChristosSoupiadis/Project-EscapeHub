@@ -70,8 +70,7 @@ public class Mission {
     }
     public int getPenaltySeconds() {
         return penaltySeconds;
-    }
-20
+    }]
     public List<MissionPath> getPaths() {
         return new ArrayList<>(paths.values());
     }

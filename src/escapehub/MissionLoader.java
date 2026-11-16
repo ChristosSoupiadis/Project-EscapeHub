@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-21
+
 import java.util.stream.Stream;
 /**
  * Διαβάζει αποστολές από αρχεία κειμένου (R9: νέα αποστολή = νέο αρχείο, χωρίς αλλαγή κώδικα).
@@ -82,7 +82,7 @@ public class MissionLoader {
             } catch (RuntimeException e) {
                 throw new IllegalStateException(file.getFileName() + " γραμμή " + lineNumber + ": " +
                         e.getMessage());
-                22
+
             }
         }
         if (mission == null) {

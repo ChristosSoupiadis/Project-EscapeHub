@@ -4,7 +4,7 @@ import java.util.List;
 /** Γρίφος με γραπτή απάντηση. Δέχεται μία ή περισσότερες σωστές μορφές της απάντησης. */
 public class TextPuzzle extends Puzzle {
     private final List<String> acceptedAnswers;
-8
+
     public TextPuzzle(String id, String pathId, String title, String question,
                       List<String> requires, String rewardEvidence, boolean finalStep,
                       List<String> acceptedAnswers) {

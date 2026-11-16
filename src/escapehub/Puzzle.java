@@ -10,7 +10,7 @@ public abstract class Puzzle {
     private final String pathId; // null για τον τελικό γρίφο
     private final String title;
     private final String question;
-7
+
     private final List<String> requires; // ποια στοιχεία πρέπει να έχει η ομάδα
     private final String rewardEvidence; // ποιο στοιχείο παίρνει όταν τον λύσει
     private final boolean finalStep;

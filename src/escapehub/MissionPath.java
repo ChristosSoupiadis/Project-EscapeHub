@@ -2,7 +2,7 @@ package escapehub;
 /** Μια διαδρομή διερεύνησης (π.χ. «Βιβλίο»). Ονομάζεται MissionPath για να μη μπερδεύεται με το
  java.nio.file.Path. */
 public class MissionPath {
-18
+
     private final String id;
     private final String title;
     private final String description;
