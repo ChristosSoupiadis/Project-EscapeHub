@@ -6,5 +6,5 @@ PATH|archive|Αρχείο|Εξετάστε τα παλιά έγγραφα στο
 EVIDENCE|key|Μικρό κλειδί|Ένα σκουριασμένο κλειδί με τον αριθμό 7.
 EVIDENCE|note|Σημείωμα|«Ο συγγραφέας της Οδύσσειας κρατά το μυστικό.»
 PUZZLE|TEXT|p1|library|Ο γρίφος του ραφιού|Πόσες μέρες έχει μια εβδομάδα|-|key|no|7,επτά|-
-PUZZLE|EXTERNAL_DATA|p2|archive|Ο ποιητής|Ποιος έγραψε την Οδύσσεια|p1|note|no|Όμηρος,Homer|openlibrary
-PUZZLE|TEXT|p3|-|Η τελική πόρτα|Ποια είναι η πρωτεύουσα της Ελλάδας|p1,p2|-|yes|Αθήνα,Athens|-
+PUZZLE|EXTERNAL_DATA|p2|archive|Ο ποιητής|Ποιος έγραψε την Οδύσσεια|key|note|no|Όμηρος,Homer|openlibrary
+PUZZLE|TEXT|p3|-|Η τελική πόρτα|Ποια είναι η πρωτεύουσα της Ελλάδας|key,note|-|yes|Αθήνα,Athens|-
