@@ -1,0 +1,36 @@
+# Αποστολή «Villa Diodati»
+# Τα πεδία χωρίζονται με | (όχι με ; γιατί το ελληνικό ερωτηματικό είναι ;)
+# Οι λίστες (απαιτεί, απαντήσεις) χωρίζονται με κόμμα. Όπου δεν υπάρχει τιμή: -
+##
+MISSION|id|τίτλος|περιγραφή|ποινή ανά λάθος (δευτερόλεπτα)
+MISSION|villa-diodati|Το μυστήριο της Villa Diodati|Τρία αντικείμενα σε ένα παλιό αρχείο. Ξεκίνα από όποιο θέλεις.|60
+
+# PATH|id|τίτλος|περιγραφή
+PATH|book|Βιβλίο|Βιβλίο χωρίς εξώφυλλο, υπότιτλος «The Modern Prometheus».
+PATH|portrait|Πορτρέτο|Πορτρέτο νεαρής γυναίκας. Στο πίσω μέρος: «κόρη της Mary Wollstonecraft».
+PATH|letter|Επιστολή|Σκισμένη επιστολή για μια συνάντηση λογοτεχνών δίπλα σε μια λίμνη.
+
+# EVIDENCE|id|τίτλος|κείμενο
+EVIDENCE|ev-author|Συγγραφέας|Το βιβλίο το έγραψε η Mary Shelley.
+EVIDENCE|ev-author-born|Γέννηση συγγραφέα|Η Mary Shelley γεννήθηκε το 1797.
+EVIDENCE|ev-portrait|Το πρόσωπο|Η γυναίκα στο πορτρέτο είναι η Mary Shelley, κόρη της Mary Wollstonecraft.
+EVIDENCE|ev-spouse|Ο σύζυγος|Σύζυγός της ήταν ο ποιητής Percy Bysshe Shelley.
+EVIDENCE|ev-meeting|Η συνάντηση|Το 1816, στη Villa Diodati, ο Byron πρότεινε διαγωνισμό ιστοριών φαντασμάτων.
+EVIDENCE|ev-archive|Το αρχείο άνοιξε|Βιβλίο, πρόσωπο και συνάντηση οδηγούν στη γέννηση του Frankenstein.
+
+# PUZZLE|τύπος|id|διαδρομή|τίτλος|ερώτηση|απαιτεί|ανταμοιβή|τελικός(yes/no)|απαντήσεις|επιπλέον
+# TEXT, EXTERNAL_DATA: απαντήσεις = όλες οι αποδεκτές μορφές. EXTERNAL_DATA: επιπλέον = wikidata ή openlibrary
+# SEQUENCE: απαντήσεις = τα βήματα με τη ΣΩΣΤΗ σειρά
+# COLLABORATIVE: απαντήσεις = τα κομμάτια, επιπλέον = πόσα διαφορετικά μέλη χρειάζονται
+
+PUZZLE|EXTERNAL_DATA|book-author|book|Ο άγνωστος συγγραφέας|Ψάξε στο Open Library το βιβλίο με υπότιτλο «The Modern Prometheus». Ποιος το έγραψε;|-|ev-author|no|Mary Shelley, Mary Wollstonecraft Shelley, Shelley|openlibrary
+
+PUZZLE|EXTERNAL_DATA|book-author-born|book|Πότε γεννήθηκε;|Πάρε το όνομα που βρήκες στο Open Library και ψάξ' το στο Wikidata. Ποιο έτος γεννήθηκε;|ev-author|ev-author-born|no|1797|wikidata
+
+PUZZLE|EXTERNAL_DATA|portrait-person|portrait|Ποια είναι στο πορτρέτο;|Ψάξε τη Mary Wollstonecraft στο Wikidata. Ποια είναι η κόρη της που έγινε συγγραφέας;|-|ev-portrait|no|Mary Shelley, Mary Wollstonecraft Shelley, Mary Wollstonecraft Godwin|wikidata
+
+PUZZLE|EXTERNAL_DATA|portrait-spouse|portrait|Ο σύζυγος|Ποιος ήταν ο σύζυγος της γυναίκας του πορτρέτου;|ev-portrait|ev-spouse|no|Percy Bysshe Shelley, Percy Shelley|wikidata
+
+PUZZLE|SEQUENCE|letter-sequence|letter|Η σειρά των γεγονότων|Η επιστολή είναι σκισμένη. Βάλε τα γεγονότα της συνάντησης στη σωστή σειρά, ένα-ένα.|-|ev-meeting|no|Άφιξη στη Γενεύη, Ο Byron νοικιάζει τη Villa Diodati, Καταιγίδες κρατούν την παρέα μέσα, Ο Byron προτείνει ιστορίες φαντασμάτων, Γεννιέται η ιδέα του Frankenstein|-
+
+PUZZLE|COLLABORATIVE|archive-final|-|Το κλειδωμένο αρχείο|Η κλειδαριά έχει δύο δίσκους. Δίσκος 1: το επώνυμο της συγγραφέα. Δίσκος 2: το έτος της συνάντησης. Κάθε δίσκο τον γυρίζει διαφορετικό μέλος.|ev-author-born, ev-spouse, ev-meeting|ev-archive|yes|Shelley, 1816|2

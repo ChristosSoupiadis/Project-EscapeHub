@@ -1,0 +1,26 @@
+# Δεύτερη αποστολή: φτιάχτηκε ΜΟΝΟ με αυτό το αρχείο, χωρίς αλλαγή στον κώδικα (R9).
+# Η μορφή εξηγείται στο villa-diodati.txt
+
+MISSION|id|τίτλος|περιγραφή|ποινή ανά λάθος (δευτερόλεπτα)
+MISSION|lost-manuscript|Το χαμένο χειρόγραφο|Ένα ποίημα, ένα πορτρέτο, ένα ημερολόγιο.|30
+
+# PATH|id|τίτλος|περιγραφή
+PATH|poem|Ποίημα|Χειρόγραφο με τίτλο «The Raven».
+PATH|portrait|Πορτρέτο|Μικρό πορτρέτο νεαρής γυναίκας μέσα σε μενταγιόν.
+PATH|diary|Ημερολόγιο|Μία σελίδα ημερολογίου με μια λέξη που επαναλαμβάνεται.
+
+# EVIDENCE|id|τίτλος|κείμενο
+EVIDENCE|lm-poet|Ο ποιητής|Το «The Raven» το έγραψε ο Edgar Allan Poe.
+EVIDENCE|lm-wife|Η σύζυγος|Η γυναίκα του μενταγιόν είναι η Virginia, σύζυγος του Poe.
+EVIDENCE|lm-bird|Το πουλί|Στο ποίημα, ένα κοράκι επαναλαμβάνει μία λέξη.
+EVIDENCE|lm-found|Βρέθηκε|Το χειρόγραφο επέστρεψε στη θέση του.
+
+# PUZZLE|τύπος|id|διαδρομή|τίτλος|ερώτηση|απαιτεί|ανταμοιβή|τελικός(yes/no)|απαντήσεις|επιπλέον
+
+PUZZLE|EXTERNAL_DATA|lm-poet|poem|Ποιος το έγραψε;|Ψάξε στο Open Library το «The Raven». Ποιος είναι ο ποιητής;|-|lm-poet|no|Edgar Allan Poe, Edgar Poe, Poe|openlibrary
+
+PUZZLE|EXTERNAL_DATA|lm-wife|portrait|Ποια είναι;|Ψάξε τον Edgar Allan Poe στο Wikidata. Ποια ήταν η σύζυγός του;|-|lm-wife|no|Virginia Eliza Clemm Poe, Virginia Clemm, Virginia Poe, Virginia|wikidata
+
+PUZZLE|TEXT|lm-bird|diary|Ποιο πουλί;|«Quoth the Raven…». Ποιο πουλί μιλάει στο ποίημα; (στα ελληνικά)|-|lm-bird|no|κοράκι|-
+
+PUZZLE|TEXT|lm-final|-|Η λέξη|Ποια λέξη επαναλαμβάνει το κοράκι;|lm-poet, lm-wife, lm-bird|lm-found|yes|Nevermore|-
